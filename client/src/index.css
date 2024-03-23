@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cormorant Infant", serif;
+ }
+
+ .gold {
+  color: #C88524;
+ }
+
+ .section {
+  min-height: 100vh;
+ }
+
+
+ /* Nav */
+
+ .navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: black;
+}
+
+.navbar-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.774);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+
+.navbar-menu.open {
+  left: 0;
+  transform: translateX(0);
+  transition: 0.3s ease-in; /* Slide the menu into view */
+}
+
+
+
+
+.close-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.navbar-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-menu li {
+  font-size: 30px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+  /* Add any additional styles as needed */
+}
+
+.navbar-menu li:hover {
+  color: #C88524;
+}
+
+.navbar-logo {
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 600;
+
+}
+
+.navbar-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.navbar-badge {
+  & .MuiBadge-badge {
+    right: 5px;
+    top: 9px;
+    padding: 0 4px;
+    height: 14px;
+    min-width: 13px;
+    color: red;
+    font-weight: 600;
+  }
+}
+
+
+
+/*Hero*/
+
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.hero div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hero div span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mid img {
+  width: 350px;
+
+}
+
+.sep img {
+  width: 300px;
+}
+
+
+/*Shopping List Tabs */
+
+.shopping-list {
+  width: 80%;
+  margin: 80px auto;
+}
+
+.shopping-list-title {
+  text-align: center;
+}
+
+.shopping-list-tabs {
+  margin: 25px;
+  border: 2px solid black;
+}
+
+.shopping-list-tab-label {
+  flex-wrap: wrap;
+ 
+}
+
+.shopping-list-items {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-around;
+  row-gap: 20px;
+  column-gap: 1.33%;
+  
+}
+
+/*Item */
+
+.item-container {
+  width: 100%; /* Or specify your desired width */
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  padding: 0 5%;
+  transition: 0.3s ease-out;
+
+}
+
+.overlay:hover {
+  background-color: rgba(255, 255, 255, 0.774);
+}
+
+.overlay.show {
+  display: block;
+}
+
+.count-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.count-controls > * {
+  margin: 0 5px;
+}
+
+.details {
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.details span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+.add-to-cart-container {
+  display: flex;
+  justify-content: center;
+
+  
+}
+
+
+
+.add-to-cart-container button span {
+  color: #C88524;
+  font-weight: 700;
+}
+
+/* Item details */
+
+.item-details-container {
+  width: 80%;
+  margin: 80px auto;
+}
+
+.item-actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.item-images-container {
+  flex: 1 1 40%;
+  margin-bottom: 40px;
+}
+
+.item-images-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.item-actions {
+  flex: 1 1 50%;
+  margin-bottom: 40px;
+}
+
+
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  margin: 65px 0 25px 0;
+}
+
+.item-info span {
+  font-weight: 700;
+}
+
+.item-info .name {
+  font-size: 32px;
+}
+
+.item-info .price {
+  font-size: 20px;
+}
+
+.item-info .description {
+  font-size: 18px;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.item-quantity {
+  margin-right: 20px;
+}
+
+.add-to-cart-button {
+  background-color: #222222;
+  border-radius: 0;
+  min-width: 150px;
+  padding: 10px 40px;
+  
+}
+
+.add-to-cart-button button {
+  color: red;
+}
+
+
+.item-information {
+  margin: 20px 0;
+}
+
+.information-content {
+  margin-top: 15px;
+}
+
+/*About Content */
+
+.aboutus-whole {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-head {
+  text-align: center;
+  font-size: 50px;
+}
+
+
+.aboutus-content {
+  padding: 15px 8px;
+}
+
+
+.aboutus-content h4 {
+  margin: 30px 12px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+
+}
+
+.aboutus-content span {
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.aboutus-img {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.aboutus-img img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.flex-about {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 38px 0;
+}
+
+
+.flex-about-r {
+  display: flex;
+  align-items: center;
+}
+
+.flex-about h1, .flex-about-r h1 {
+  margin: 0px 12px;
+}
+
+.flex-about h4, .flex-about-r h4{
+  margin: 4px 12px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+  width: 350px;
+}
+.flex-about img, .flex-about-r img {
+  width: 550px;
+}
+
+
+/*Contact */
+
+
+.form-header {
+  text-align: center;
+  margin: 30px 0;
+  
+}
+
+.form-header p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-header h4 {
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+
+form input, textarea {
+  padding: 5px 0;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+form textarea {
+  resize: none;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+}
+.submit button {
+  padding: 12px 9px;
+  color: #C88524;
+  background: black;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  
+}
+
+.submit button:hover {
+  background: white;
+  border: 2px solid black;
+}
+
+
+/*cart*/
+
+
+
+@media (max-width:896px) {
+  .flex-about-r, .flex-about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-about img, .flex-about-r img {
+    width: 300px;
+  }
+
+  .flex-about-r h1, .flex-about h1 {
+    text-align: center;
+  }
+}
