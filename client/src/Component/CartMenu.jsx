@@ -64,7 +64,7 @@ const CartMenu = () => {
                                     <img alt={item?.name}
                                     width="123px"
                                     height="164px"
-                                    src={`http://localhost:1338${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`} />
+                                    src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`} />
 
                                 </Box>
                                 <Box flex="1 1 60%">

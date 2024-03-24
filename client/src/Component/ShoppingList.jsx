@@ -40,7 +40,7 @@ const ShoppingList = () => {
   return (
     <Box className="shopping-list">
       <Typography variant='h3' className="shopping-list-title">
-        <b><span className="gold">Shop Afri</span></b>
+        <b><span className="gold">Shop Afri Body Care</span></b>
       </Typography>
       <Tabs
         value={value}

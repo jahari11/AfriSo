@@ -26,7 +26,7 @@ const ItemDetails = () => {
 
   async function getItem() {
     const item = await fetch(
-      `http://localhost:1338/api/items/${itemId}?populate=image`,
+      `https://afri-new-e8b16c3eb9ad.herokuapp.com/api/items/${itemId}?populate=image`,
       {
         method: "GET",
       }
@@ -37,7 +37,7 @@ const ItemDetails = () => {
 
   async function getItems() {
     const items = await fetch(
-      `http://localhost:1338/api/items?populate=image`,
+      `https://afri-new-e8b16c3eb9ad.herokuapp.com/api/items?populate=image`,
       {
         method: "GET",
       }
@@ -49,7 +49,7 @@ const ItemDetails = () => {
   useEffect(() => {
     getItem();
     getItems();
-  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [itemId]); 
 
   return (
     <>
@@ -60,7 +60,7 @@ const ItemDetails = () => {
           <Box className="item-images-container">
             <img
               alt={item?.name}
-              src={`http://localhost:1338${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             />
           </Box>
 
@@ -69,7 +69,7 @@ const ItemDetails = () => {
             <Box className="item-info">
               <span className="name">{item?.attributes?.name}</span>
               <span className="price">${item?.attributes?.price}</span>
-              <span className="description">{item?.attributes?.longDescription}</span>
+              <span className="description">{item?.attributes?.shortDescription}</span>
             </Box>
 
             <Box className="item-quantity">
@@ -85,8 +85,8 @@ const ItemDetails = () => {
             <Button sx={{
               color:'#C88524',
               '&:hover': {
-                  backgroundColor: '#C88524', // Change the background color on hover
-                  color: '#FFF', // Change the text color on hover
+                  backgroundColor: '#C88524', 
+                  color: '#FFF', 
               }
             }} className="add-to-cart-button"
               onClick={() => dispatch(addToCart({ item: { ...item, count } }))}

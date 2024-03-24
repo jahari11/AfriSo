@@ -12,16 +12,22 @@ const Item = ({ item, width }) => {
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 
+  // Check if item and its attributes exist
+  if (!item || !item.attributes) {
+    return null; // Render nothing if item or attributes are missing
+  }
+
+  // Destructure attributes
   const { category, price, name, image } = item.attributes;
-  const {
-    data: {
-      attributes: {
-        formats: {
-          medium: { url },
-        },
-      },
-    },
-  } = image;
+
+  // Check if image and its data exist
+  if (!image || !image.data) {
+    return null; // Render nothing if image or its data are missing
+  }
+
+  // Destructure image data
+  const { formats } = image.data.attributes || {};
+  const url = formats?.medium?.url; 
 
   return (
     <Box className="item-container" style={{ width: width }}>
@@ -30,12 +36,16 @@ const Item = ({ item, width }) => {
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
-        <img
-          alt={item.name}
-          src={`http://localhost:1338${url}`}
-          onClick={() => navigate(`/item/${item.id}`)}
-        />
-        
+        {/* Render placeholder image if url is missing */}
+        {url ? (
+          <img
+            alt={item.name}
+            src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${url}`}
+            onClick={() => navigate(`/item/${item.id}`)}
+          />
+        ) : (
+          <div>No Image Available</div>
+        )}
       </Box>
 
       <Box onClick={() => navigate(`/item/${item.id}`)} className="details">

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
+import Navbar from '..//../Component/Navbar'
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
@@ -36,7 +37,7 @@ const Checkout = () => {
     actions.setTouched({});
   };
 
-  const handleBack = () => {
+    const handleBack = () => {
     setActiveStep(0); // Go back to the first step
   };
 
@@ -52,7 +53,7 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch("http://localhost:1338/api/orders", {
+    const response = await fetch("https://afri-new-e8b16c3eb9ad.herokuapp.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
@@ -64,6 +65,8 @@ const Checkout = () => {
   }
 
   return (
+    <>
+    <Navbar />
     <Box width="80%" m="100px auto">
       <Stepper activeStep={activeStep} sx={{ m: "20px 0" }}>
         <Step>
@@ -151,6 +154,7 @@ const Checkout = () => {
         </Formik>
       </Box>
     </Box>
+    </>
   );
 };
 
