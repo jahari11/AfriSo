@@ -64,7 +64,7 @@ const CartMenu = () => {
                                     <img alt={item?.name}
                                     width="123px"
                                     height="164px"
-                                    src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`} />
+                                    src={`https://afribodycareserver-ec9759a4ed30.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`} />
 
                                 </Box>
                                 <Box flex="1 1 60%">
@@ -114,8 +114,8 @@ const CartMenu = () => {
                         m:"20px 0",
                         color:'#C88524',
                         '&:hover': {
-                            backgroundColor: '#C88524', // Change the background color on hover
-                            color: '#FFF', // Change the text color on hover
+                            backgroundColor: '#C88524', 
+                            color: '#FFF', 
                         }
                     }} onClick={()=> {
                         navigate("/checkout");

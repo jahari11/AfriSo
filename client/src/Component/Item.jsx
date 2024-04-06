@@ -40,7 +40,7 @@ const Item = ({ item, width }) => {
         {url ? (
           <img
             alt={item.name}
-            src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${url}`}
+            src={`https://afribodycareserver-ec9759a4ed30.herokuapp.com${url}`}
             onClick={() => navigate(`/item/${item.id}`)}
           />
         ) : (

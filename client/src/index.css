@@ -174,7 +174,7 @@
 /*Item */
 
 .item-container {
-  width: 100%; /* Or specify your desired width */
+  width: 100%; 
 }
 
 .image-container {
@@ -245,6 +245,7 @@
 }
 
 /* Item details */
+
 
 .item-details-container {
   width: 80%;

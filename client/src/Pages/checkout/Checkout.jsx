@@ -53,7 +53,7 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch("https://afri-new-e8b16c3eb9ad.herokuapp.com/api/orders", {
+    const response = await fetch("https://afribodycareserver-ec9759a4ed30.herokuapp.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),

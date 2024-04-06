@@ -15,7 +15,7 @@ const ShoppingList = () => {
   };
 
   async function getItems() {
-    const items = await fetch("https://afri-new-e8b16c3eb9ad.herokuapp.com/api/items?populate=image", {
+    const items = await fetch("https://afribodycareserver-ec9759a4ed30.herokuapp.com/api/items?populate=image", {
       method: "GET"
     });
 

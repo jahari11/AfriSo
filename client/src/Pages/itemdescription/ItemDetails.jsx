@@ -49,6 +49,33 @@ const ItemDetails = () => {
   useEffect(() => {
     getItem();
     getItems();
+  }, [itemId]);
+
+  async function getItem() {
+    const item = await fetch(
+      `https://afribodycareserver-ec9759a4ed30.herokuapp.com/api/items/${itemId}?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemJson = await item.json();
+    setItem(itemJson.data);
+  }
+
+  async function getItems() {
+    const items = await fetch(
+      `https://afribodycareserver-ec9759a4ed30.herokuapp.com/api/items?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemsJson = await items.json();
+    setItems(itemsJson.data);
+  }
+
+  useEffect(() => {
+    getItem();
+    getItems();
   }, [itemId]); 
 
   return (
@@ -60,7 +87,7 @@ const ItemDetails = () => {
           <Box className="item-images-container">
             <img
               alt={item?.name}
-              src={`https://afri-new-e8b16c3eb9ad.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`https://afribodycareserver-ec9759a4ed30.herokuapp.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             />
           </Box>
 
